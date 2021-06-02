@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package downloadManager;
+option go_package = "github.com/shashank-razor/DownloadManager/rpc/downloadManager";
+
+service Downloader {
+  rpc Downloads(downloadRequest) returns (downloadResponse);
+}
+
+message downloadRequest{
+   string type = 1;
+   repeated string urls = 2;
+}
+
+message downloadResponse{
+   string id = 1;
+}
+
+
